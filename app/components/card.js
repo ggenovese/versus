@@ -11,7 +11,7 @@ const Card = React.createClass({
         const { selected, objectKey } = this.props;
         let divStyle = {
               backgroundImage: 'url(' + value + ')'
-          }
+        };
         return (
             <div style={divStyle} onClick={this.handleButton} className={
                     "versus-card v-brd-light l-col-2-5 l-h-2-5 v-bg-white l-position-relative v-brd-b-medium l-margin-top-400 " +
