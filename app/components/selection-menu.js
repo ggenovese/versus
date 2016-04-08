@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Isvg from 'react-inlinesvg';
-import $ from 'jquery';
 
 function mapStateToProps(state){
     return {
