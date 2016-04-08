@@ -1,0 +1,35 @@
+// _reset.scss
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img, svg {
+    width: 100%;
+    max-width: 100%;
+}

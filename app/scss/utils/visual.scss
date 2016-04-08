@@ -1,0 +1,125 @@
+.v-bg-dark {
+    background: $dark;
+}
+
+.v-bg-cantina-blue {
+    background: $cantina-blue;
+}
+
+.v-bg-extralight {
+    background: $exralight;
+}
+
+.v-bg-white {
+    background: $white;
+}
+
+// Borders
+.v-brd-light {
+    border: 1px solid $light;
+}
+
+.v-brd-b-light {
+    border-bottom: 1px solid $light;
+}
+
+.v-brd-b-medium {
+    border-top: 3px solid $medium;
+}
+
+.v-brd-t-cantina-blue {
+    border-top: 8px solid $cantina-blue;
+}
+
+// Forms
+.v-text-input, .v-text-area {
+    border: 1px solid $light;
+    font-size: $epsilon;
+    padding: 1em;
+    width: 100%;
+}
+
+// Buttons
+.v-button {
+    padding: 1em 2em;
+    color: $white;
+    font-weight: 500;
+    border: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $orange;
+    cursor: pointer;
+    transition: background-color .15s;
+    &:hover {
+        background-color: lighten($orange, 5%)
+    }
+    &.v-button--blue {
+        background-color: $cantina-blue;
+        &:hover {
+            background-color: lighten($cantina-blue, 5%)
+        }
+    }
+    &.v-button--svg {
+        svg, span {
+            pointer-events: none;
+        }
+    }
+    &.v-button-disabled {
+        background-color: lighten($orange, 30%);
+        cursor: none;
+    }
+}
+
+// Overlay
+.v-overlay:before {
+    background: $black;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: .15;
+    position: absolute;
+    top: 0;
+    width:100%;
+}
+
+
+// Arrows
+.v-arrows {
+    position: relative;
+    &:before, &:after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        vertical-align: middle;
+    }
+    &:before {
+        border-right:10px solid $dark;
+        margin-right: .5em;
+        @media (max-width: $small-screen){
+            border-bottom: 10px solid $dark;
+            top: -1.8em;
+        }
+    }
+    &:after {
+        border-left: 10px solid $dark;
+        margin-left: .5em;
+        @media (max-width: $small-screen){
+            border-top: 10px solid $dark;
+            bottom: -1.8em;
+        }
+    }
+    &:before, &:after {
+        @media (max-width: $small-screen){
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            left: 50%;
+            margin: 0;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+    }
+}

@@ -1,0 +1,72 @@
+h1, h2, h3 {
+    font-family: $font-heading;
+}
+
+p, li, td, dd, a {
+    font-family: $font-body;
+}
+
+a {
+    color: $cantina-blue;
+    &:hover, &:visited {
+        color: darken($cantina-blue, 10%);
+    }
+}
+
+.giga {
+    font-size: $giga;
+}
+.mega {
+    font-size: $mega;
+}
+.alpha {
+    font-size: $alpha;
+}
+.beta {
+    font-size: $beta;
+}
+.gamma {
+    font-size: $gamma;
+}
+.delta {
+    font-size: $delta;
+}
+.epsilo {
+    font-size: $epsilon;
+}
+.zeta {
+    font-size: $zeta;
+}
+.eta {
+    font-size: $eta;
+}
+
+.t-lato {
+    font-family: $font-body;
+}
+
+.t-big-noodle-titling {
+    font-family: $font-heading;
+}
+
+.t-reverse {
+    color: $white;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-lato-uppercase {
+    font-family: $font-body;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.t-paragraph-lead {
+    font-size: $beta;
+    line-height: 1.5;
+    span:first-child {
+        font-weight: $weight-bold;
+    }
+}

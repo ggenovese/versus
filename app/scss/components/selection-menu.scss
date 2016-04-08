@@ -1,0 +1,47 @@
+.selection-menu {
+    top: $default-pad;
+    right: $default-pad;
+    width: $default-pad * 2;
+    img {
+        top: 35px;
+    }
+    .selection-menu__comment {
+        background: $white;
+        height: $default-pad * 4;
+        padding: 0;
+        overflow: hidden;
+        top: 0;
+        &.active {
+            padding: $default-pad / 2;
+        }
+    }
+    img, .selection-menu__comment {
+        max-width: 200px;
+        max-height: 200px;
+        right: $default-pad * 2;
+        transition: width .2s;
+        width: 0;
+        &.active {
+            width: 80vw;
+            @media(min-width: $small-screen){
+                width: 25vw - 10;
+            }
+        }
+    }
+    button {
+        padding: 0;
+    }
+    svg {
+        fill: $white;
+        padding: $default-pad / 1.5;
+    }
+    ul {
+        height: 0;
+        overflow: hidden;
+        transition: height .2s;
+        &.active {
+            height: 103px;
+            overflow: visible;
+        }
+    }
+}

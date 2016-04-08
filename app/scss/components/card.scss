@@ -1,0 +1,22 @@
+.versus-card {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.30s ease-in-out;
+    > button {
+        bottom: $default-pad;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+    }
+    &.active-card {
+        box-shadow: 0 0 5px $cantina-blue;
+        border: 1px solid $cantina-blue;
+    }
+    @media (max-width: $small-screen) {
+        height: 250px;
+    }
+}
