@@ -1,3 +1,4 @@
+// Backgrounds
 .v-bg-dark {
     background: $dark;
 }
@@ -36,7 +37,18 @@
     border: 1px solid $light;
     font-size: $epsilon;
     padding: 1em;
+    transition: all 0.30s ease-in-out;
     width: 100%;
+    &.v-error {
+        border-color: $red;
+    }
+}
+
+.v-text-area.inactive {
+    border: 0;
+    height: 0;
+    margin-top: 0;
+    padding: 0;
 }
 
 // Buttons
@@ -86,6 +98,7 @@
 
 // Arrows
 .v-arrows {
+    color: $white;
     position: relative;
     &:before, &:after {
         content: "";
@@ -97,18 +110,18 @@
         vertical-align: middle;
     }
     &:before {
-        border-right:10px solid $dark;
+        border-right:10px solid $white;
         margin-right: .5em;
         @media (max-width: $small-screen){
-            border-bottom: 10px solid $dark;
+            border-bottom: 10px solid $white;
             top: -1.8em;
         }
     }
     &:after {
-        border-left: 10px solid $dark;
+        border-left: 10px solid $white;
         margin-left: .5em;
         @media (max-width: $small-screen){
-            border-top: 10px solid $dark;
+            border-top: 10px solid $white;
             bottom: -1.8em;
         }
     }

@@ -110,3 +110,11 @@ export function resetEmailSent() {
         type: 'RESET_EMAIL_SENT'
     };
 }
+
+export function setCommentDisplayInput(versus, id) {
+    return {
+        type: 'SET_COMMENT_DISPLAY_INPUT',
+        versus,
+        id
+    };
+}

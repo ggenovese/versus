@@ -7,16 +7,16 @@ const Card = React.createClass({
     },
 
     render: function() {
-        const { value, checked } = this.props.option;
-        const { selected, objectKey } = this.props;
+        const { value } = this.props.option;
+        const { notselected, selected, objectKey } = this.props;
+
         let divStyle = {
               backgroundImage: 'url(' + value + ')'
         };
         return (
-            <div style={divStyle} onClick={this.handleButton} className={
-                    "versus-card v-brd-light l-col-2-5 l-h-2-5 v-bg-white l-position-relative v-brd-b-medium l-margin-top-400 " +
-                    (selected === objectKey ? "active-card" : "v-overlay")}>
-                <button className="v-button v-button--blue l-position-absolute" onClick={this.handleButton}>Select</button>
+            <div style={divStyle}
+                 onClick={this.handleButton}
+                 className={"versus-card l-h-4-5 v-bg-white "+ (selected === objectKey ? "l-col-1" : "l-col-1-2")+(notselected === objectKey ? " l-hidden" : "")}>
             </div>
         );
   }

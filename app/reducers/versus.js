@@ -75,6 +75,11 @@ export default function versus(state = initialState, action) {
         newState.emailSent = false;
         return newState;
     }
+    case 'SET_COMMENT_DISPLAY_INPUT' : {
+        const newState = Object.assign({}, state);
+        newState.choices[action.id] = action.versus;
+        return newState;
+    }
     default:
       return state;
   }

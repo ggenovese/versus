@@ -158,7 +158,10 @@ export default class Results extends React.Component {
                     <ul className="l-grid l-list-no-style">
                         { selections }
                     </ul>
-                    <SendEmail handleSendEmail={this.handleSendEmail} emailSent={versus.emailSent} name={versus.user.name} email={versus.user.email}/>
+                    <SendEmail handleSendEmail={this.handleSendEmail}
+                               emailSent={versus.emailSent}
+                               name={versus.user.name}
+                               email={versus.user.email}/>
                 </div>
             </div>
         );

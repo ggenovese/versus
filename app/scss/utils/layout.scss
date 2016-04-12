@@ -17,6 +17,7 @@
     display: inline-block;
 }
 
+// Hiding Elements
 .l-visually-hidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -28,8 +29,11 @@
     width: 1px;
 }
 
-// Margin
+.l-hidden {
+    display: none;
+}
 
+// Margin
 .l-margin-100 {
     margin: $default-pad;
 }
@@ -57,7 +61,6 @@
 }
 
 // Padding
-
 .l-padding-100 {
     padding: $default-pad;
 }
@@ -100,6 +103,10 @@
 // center
 .l-center-block {
     margin: 0 auto;
+}
+.l-center-absolute-el {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 // Lists
@@ -193,5 +200,11 @@
 .l-h-2-5 {
     @media(min-width: $small-screen) {
         height: 40vh;
+    }
+}
+
+.l-h-4-5 {
+    @media(min-width: $small-screen) {
+        height: 80vh;
     }
 }

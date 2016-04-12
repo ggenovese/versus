@@ -3,9 +3,11 @@ const Data = [
       "id": 1,
       "name": "shape",
       "selected": "",
+      "notselected": "",
       "complete": false,
       "settings": false,
       "comment": false,
+      "commentDisplayInput": false,
       "altImg": false,
       "options": {
         "a": {
@@ -24,9 +26,11 @@ const Data = [
       "id": 2,
       "name": "color",
       "selected": "",
+      "notselected": "",
       "complete": false,
       "settings": false,
       "comment": false,
+      "commentDisplayInput": false,
       "altImg": false,
       "options": {
         "a": {
@@ -45,9 +49,11 @@ const Data = [
       "id": 3,
       "name": "fonts",
       "selected": "",
+      "notselected": "",
       "complete": false,
       "settings": false,
       "comment": false,
+      "commentDisplayInput": false,
       "altImg": false,
       "options": {
         "a": {
@@ -66,9 +72,11 @@ const Data = [
       "id": 4,
       "name": "animals",
       "selected": "",
+      "notselected": "",
       "complete": false,
       "settings": false,
       "comment": false,
+      "commentDisplayInput": false,
       "altImg": false,
       "options": {
         "a": {
