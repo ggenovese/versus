@@ -94,7 +94,7 @@ export default class Versus extends React.Component {
                 const option = versus.choices[versusIndex];
                 return (
                     <div>
-                        <form ref="versusForm">
+                        <form ref="versusForm" className="l-position-relative">
                             <div className="l-grid">
 
                                 <Card key="a"

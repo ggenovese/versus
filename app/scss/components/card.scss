@@ -1,17 +1,12 @@
 .versus-card {
+    background-color: $dark;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     outline: none;
     overflow: hidden;
     position: relative;
-    transition: all 0.30s ease-in-out;
-    > button {
-        bottom: $default-pad;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50%;
-    }
+    transition: width 0.30s ease-in-out;
     @media (max-width: $small-screen) {
         height: 250px;
     }

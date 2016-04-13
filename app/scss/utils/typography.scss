@@ -53,6 +53,10 @@ a {
     color: $white;
 }
 
+.t-blue {
+    color: $cantina-blue;
+}
+
 .t-center {
     text-align: center;
 }
@@ -64,7 +68,7 @@ a {
 }
 
 .t-paragraph-lead {
-    font-size: $beta;
+    font-size: $gamma;
     line-height: 1.5;
     span:first-child {
         font-weight: $weight-bold;

@@ -24,12 +24,12 @@ const SignInForm = React.createClass({
 
   render: function() {
     return (
-      <form ref="signInForm" onSubmit={this.processSignInForm}>
+      <form ref="signInForm" className="l-grid" onSubmit={this.processSignInForm}>
         <label htmlFor="name" className="l-visually-hidden">Your Name</label>
         <input className={"v-text-input l-d-block l-margin-bottom-100 "+ (this.error ? "v-error" : "")} name="name" type="text" ref="name" placeholder="Your Name" required/>
         <label htmlFor="email" className="l-visually-hidden">Email</label>
         <input className="v-text-input l-d-block l-margin-bottom-100" name="email" type="text" ref="email" placeholder="Email" required/>
-        <button className="v-button l-col-1-2 l-col-right" id="submit" type="submit">Sign In</button>
+        <button className="v-button v-button-large l-col-1" id="submit" type="submit">Sign In</button>
       </form>
     );
   }

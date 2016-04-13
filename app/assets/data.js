@@ -5,10 +5,7 @@ const Data = [
       "selected": "",
       "notselected": "",
       "complete": false,
-      "settings": false,
-      "comment": false,
       "commentDisplayInput": false,
-      "altImg": false,
       "options": {
         "a": {
           "value": "/images/square.svg",
@@ -28,10 +25,7 @@ const Data = [
       "selected": "",
       "notselected": "",
       "complete": false,
-      "settings": false,
-      "comment": false,
       "commentDisplayInput": false,
-      "altImg": false,
       "options": {
         "a": {
           "value": "/images/color1.jpg",
@@ -51,20 +45,15 @@ const Data = [
       "selected": "",
       "notselected": "",
       "complete": false,
-      "settings": false,
-      "comment": false,
       "commentDisplayInput": false,
-      "altImg": false,
       "options": {
         "a": {
           "value": "/images/times.png",
-          "checked": false,
-          "comment": "This is a comment. This is a comment. This is a comment."
+          "checked": false
         },
         "b": {
           "value": "/images/futura.png",
-          "checked": false,
-          "comment": ""
+          "checked": false
         }
       }
     },
@@ -74,20 +63,15 @@ const Data = [
       "selected": "",
       "notselected": "",
       "complete": false,
-      "settings": false,
-      "comment": false,
       "commentDisplayInput": false,
-      "altImg": false,
       "options": {
         "a": {
           "value": "/images/dog.jpg",
-          "checked": false,
-          "comment": "This is a comment. This is a comment. This is a comment."
+          "checked": false
         },
         "b": {
           "value": "/images/cat.jpg",
-          "checked": false,
-          "comment": ""
+          "checked": false
         }
       }
     }

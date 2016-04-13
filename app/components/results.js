@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { connect } from 'react-redux';
-import SelectionMenu from './selection-menu';
 import SendEmail from './send-email';
+import Edit from './edit';
 import _ from 'lodash';
 import * as actions from '../actions/versus-actions';
 
@@ -16,99 +16,16 @@ export default class Results extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleUtil = this.handleUtil.bind(this);
-        this.setSettingsState = this.setSettingsState.bind(this);
-        this.setAltImgState = this.setAltImgState.bind(this);
-        this.setCommentState = this.setCommentState.bind(this);
         this.navigateToVersus = this.navigateToVersus.bind(this);
-        this.setUtilsFalse = this.setUtilsFalse.bind(this);
         this.handleSendEmail = this.handleSendEmail.bind(this);
-    }
-
-    handleUtil( id, name ) {
-        if ( name ) {
-            switch (name) {
-                case 'settings':
-                    this.setSettingsState(id);
-                    break;
-                case 'altimg':
-                    this.setAltImgState(id);
-                    break;
-                case 'comment':
-                    this.setCommentState(id);
-                    break;
-                default:
-
-            }
-        }
-
-    }
-
-    setUtilsFalse(obj, id) {
-        this.props.dispatch(actions.setSettingsFalse(obj, id));
-        this.props.dispatch(actions.setAltImgFalse(obj, id));
-        this.props.dispatch(actions.setCommentFalse(obj, id));
-    }
-
-    setSettingsState(id) {
-        const { versus } = this.props;
-        const self = this;
-
-        versus.choices.map(function(selections) {
-            if ( selections.id === id ) {
-
-                self.props.dispatch(actions.setSettingsState(selections, id));
-                self.props.dispatch(actions.setAltImgFalse(selections, id));
-                self.props.dispatch(actions.setCommentFalse(selections, id));
-
-            } else {
-                self.setUtilsFalse(selections, selections.id);
-            }
-        });
-    }
-
-    setAltImgState(id) {
-        const { versus } = this.props;
-        const self = this;
-        versus.choices.map(function(selections) {
-            if ( selections.id === id ) {
-
-                self.props.dispatch(actions.setAltImgState(selections, id));
-                self.props.dispatch(actions.setCommentFalse(selections, selections.id));
-
-            } else {
-
-                self.props.dispatch(actions.setAltImgFalse(selections, selections.id));
-
-            }
-        });
-    }
-
-    setCommentState(id) {
-        const { versus } = this.props;
-        const self = this;
-        versus.choices.map(function(selections) {
-            if ( selections.id === id ) {
-
-                self.props.dispatch(actions.setCommentState(selections, id));
-                self.props.dispatch(actions.setAltImgFalse(selections, selections.id));
-
-            } else {
-
-                self.props.dispatch(actions.setCommentFalse(selections, selections.id));
-
-            }
-        });
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     navigateToVersus(index, editVersus) {
-        const { history, versus } = this.props;
+        const { history } = this.props;
         const self = this;
 
         if ( editVersus ) {
-            versus.choices.map(function(selections){
-                self.setUtilsFalse(selections, selections.id);
-            });
             this.props.dispatch(actions.resetEmailSent());
         }
         history.push('/versus/'+index);
@@ -116,6 +33,10 @@ export default class Results extends React.Component {
 
     handleSendEmail(){
         this.props.dispatch(actions.emailSent());
+    }
+
+    handleScroll(bool){
+        this.props.dispatch(actions.handleScroll(bool));
     }
 
     render() {
@@ -133,18 +54,22 @@ export default class Results extends React.Component {
                 unSelectedObj = selection.options.a;
             }
 
-            let liStyle = {
-                  backgroundImage: 'url(' + selectedObj.value + ')'
-              }
             return (
-                <li style={liStyle}
-                    key={selection.id}
-                    className={"versus-card l-h-2-5 v-bg-white l-col-1-4 l-position-relative "+((selection.altImg || selection.comment) && selection.settings ? "v-overlay" : "")}>
-                    <SelectionMenu handleUtil={self.handleUtil}
-                                   navigateToVersus={self.navigateToVersus}
-                                   altimg={unSelectedObj.value}
-                                   selection={selection}
-                                   setUtilsFalse={self.setUtilsFalse}/>
+                <li key={selection.id}
+                    className="l-grid v-bg-white l-d-flex l-d-flex-r-mobile l-position-relative v-brd-b-cantina-blue-100">
+                    <div className="l-col-1-3 l-col-r">
+                        <img src={selectedObj.value} />
+                    </div>
+                    <div className="l-col-2-3 l-col-r l-padding-100 l-d-flex l-d-flex-r-mobile">
+                        <div className="l-col-3-4 l-col-r l-padding-right-100">
+                            <h2 className="v-brd-b-light l-bar-header-padding">{ selection.name }</h2>
+                            <p className="delta l-bar-header-padding">{ selection.commenttext || "No comments text. Lorem ipsum dolor sit amet, consectetur adipisicing elit." }</p>
+                        </div>
+                        <Edit
+                            navigateToVersus={self.navigateToVersus}
+                            altImg={unSelectedObj.value}
+                            id={selection.id}/>
+                    </div>
                 </li>
             );
         });
@@ -154,14 +79,16 @@ export default class Results extends React.Component {
                 <div className="l-padding-100">
                     <h1 className="t-big-noodle-titling alpha">Your Results</h1>
                 </div>
-                <div className="l-padding-100 v-bg-extralight l-h-1">
-                    <ul className="l-grid l-list-no-style">
+                <div className="l-grid l-padding-100 v-bg-extralight">
+                    <ul className="l-col-3-4 l-col-r l-list-no-style">
                         { selections }
                     </ul>
-                    <SendEmail handleSendEmail={this.handleSendEmail}
-                               emailSent={versus.emailSent}
-                               name={versus.user.name}
-                               email={versus.user.email}/>
+                    <SendEmail handleSendEmail={ this.handleSendEmail }
+                               emailSent={ versus.emailSent }
+                               name={ versus.user.name }
+                               email={ versus.user.email }
+                               handleScroll={ this.handleScroll }
+                               fixEmailCta={ versus.fixEmailCta }/>
                 </div>
             </div>
         );

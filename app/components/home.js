@@ -39,10 +39,12 @@ export default class Home extends React.Component {
                     <h1 className="t-big-noodle-titling alpha">Welcome</h1>
                 </div>
                 <div className="l-grid v-bg-extralight l-h-1 l-padding-100">
-                    <div className="l-col-1-2 l-center-block">
-                        <p className="t-paragraph-lead l-margin-tb-100"><span>Versus</span> is a comparison tool to create an informed design approach, as well as to foster a sense of design transparency and participation on the part of you the client.</p>
-                        <h4 className="t-lato-uppercase l-margin-top-400 l-margin-bottom-100">Sign In</h4>
-                        <SignInForm addUser={this.addUser} navigateToVersus={this.navigateToVersus}/>
+                    <div className="l-col-1-2 l-col-r l-center-block">
+                        <div className="l-padding-800 v-bg-white l-margin-top-400">
+                            <p className="t-paragraph-lead"><span>Versus</span> is a comparison tool to create an informed design approach, as well as to foster a sense of design transparency and participation on the part of you the client.</p>
+                            <h4 className="t-lato-uppercase l-margin-tb-400">Get Started</h4>
+                            <SignInForm addUser={this.addUser} navigateToVersus={this.navigateToVersus}/>
+                        </div>
                     </div>
                 </div>
             </div>

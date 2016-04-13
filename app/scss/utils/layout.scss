@@ -32,6 +32,14 @@
 .l-hidden {
     display: none;
 }
+@media(max-width: $small-screen) {
+    .l-mobile-hidden {
+        display: none;
+    }
+    .l-mobile-visible {
+        display: block;
+    }
+}
 
 // Margin
 .l-margin-100 {
@@ -55,12 +63,18 @@
 .l-margin-left-100 {
     margin-left: $default-pad;
 }
-
 .l-margin-top-400 {
     margin-top: $default-pad * 2;
 }
+.l-margin-tb-400 {
+    margin-top: $default-pad * 2;
+    margin-bottom: $default-pad * 2;
+}
 
 // Padding
+.l-padding-50 {
+    padding: $default-pad / 2;
+}
 .l-padding-100 {
     padding: $default-pad;
 }
@@ -84,6 +98,12 @@
 }
 .l-padding-top-400 {
     padding-top: $default-pad * 2;
+}
+.l-padding-800 {
+    padding: $default-pad * 4;
+    @media (max-width: $small-screen) {
+        padding: $default-pad * 2;
+    }
 }
 
 
@@ -141,13 +161,20 @@
     display: table;
     clear: both;
   }
+  @media(max-width: $small-screen){
+      display: block;
+  }
 }
 
 [class*='l-col-']:not(.l-center-block) {
-    @media(min-width: $small-screen){
-        float: left;
-        &.l-col-right {
-            float: right;
+    float: left;
+    &.l-col-right {
+        float: right;
+    }
+    &.l-col-r {
+        @media(max-width: $small-screen){
+            float: none;
+            width: 100%;
         }
     }
 }
@@ -157,39 +184,28 @@
     width: 100%;
 }
 .l-col-2-3 {
-    @media(min-width: $small-screen){
-        width: 66.66%;
-    }
+    width: 66.66%;
 }
 .l-col-1-3 {
-    @media(min-width: $small-screen){
-        width: 33.33%;
-    }
+    width: 33.33%;
 }
 .l-col-1-2 {
-    @media(min-width: $small-screen){
-        width: 50%;
-    }
+    width: 50%;
 }
 .l-col-1-4 {
-    @media(min-width: $small-screen){
-        width: 25%;
-    }
+    width: 25%;
+}
+.l-col-3-4 {
+    width: 75%;
 }
 .l-col-1-8 {
-    @media(min-width: $small-screen){
-        width: 12.5%;
-    }
+    width: 12.5%;
 }
 .l-col-2-5 {
-    @media(min-width: $small-screen){
-        width: 40%;
-    }
+    width: 40%;
 }
 .l-col-1-5 {
-    @media(min-width: $small-screen){
-        width: 20%;
-    }
+    width: 20%;
 }
 
 // Heights
@@ -206,5 +222,11 @@
 .l-h-4-5 {
     @media(min-width: $small-screen) {
         height: 80vh;
+    }
+}
+
+.l-h-9-10 {
+    @media(min-width: $small-screen) {
+        height: 90vh;
     }
 }

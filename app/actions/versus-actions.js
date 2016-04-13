@@ -51,53 +51,6 @@ export function getVersus() {
 }
 
 // RESULTS ACTIONS
-export function setSettingsState(versus, id) {
-    return {
-        type: 'SETTINGS_STATE_TOGGLE',
-        versus,
-        id
-    };
-}
-
-export function setSettingsFalse(versus, id) {
-    return {
-        type: 'SETTINGS_STATE_FALSE',
-        versus,
-        id
-    };
-}
-
-export function setAltImgState(versus, id) {
-    return {
-        type: 'ALTIMG_STATE_TOGGLE',
-        versus,
-        id
-    };
-}
-
-export function setAltImgFalse(versus, id) {
-    return {
-        type: 'ALTIMG_STATE_FALSE',
-        versus,
-        id
-    };
-}
-
-export function setCommentState(versus, id) {
-    return {
-        type: 'COMMENT_STATE_TOGGLE',
-        versus,
-        id
-    };
-}
-
-export function setCommentFalse(versus, id) {
-    return {
-        type: 'COMMENT_STATE_FALSE',
-        versus,
-        id
-    };
-}
 
 export function emailSent() {
     return {
@@ -117,4 +70,11 @@ export function setCommentDisplayInput(versus, id) {
         versus,
         id
     };
+}
+
+export function handleScroll(bool) {
+    return {
+        type: 'HANDLE_SCROLL',
+        bool
+    }
 }
