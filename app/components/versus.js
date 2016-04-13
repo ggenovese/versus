@@ -98,33 +98,31 @@ export default class Versus extends React.Component {
                             <div className="l-grid">
 
                                 <Card key="a"
-                                    selected={option.selected}
-                                    notselected={option.notselected}
-                                    objectKey="a" name={option.name}
-                                    option={option.options.a}
-                                    handleButton={self.handleButton}
+                                      selected={option.selected}
+                                      notselected={option.notselected}
+                                      objectKey="a" name={option.name}
+                                      option={option.options.a}
+                                      handleButton={self.handleButton}
                                 />
 
-                                <Card
-                                    key="b"
-                                    selected={option.selected}
-                                    notselected={option.notselected}
-                                    objectKey="b" name={option.name}
-                                    option={option.options.b}
-                                    handleButton={self.handleButton}
+                                <Card key="b"
+                                      selected={option.selected}
+                                      notselected={option.notselected}
+                                      objectKey="b" name={option.name}
+                                      option={option.options.b}
+                                      handleButton={self.handleButton}
                                 />
                             </div>
 
-                            <CardControls
-                                selected={option.selected}
-                                handleButton={self.handleButton}
-                                options={option.options}
-                                commenttext={option.commenttext}
-                                comment={option.comment}
-                                onSubmit={self.processVersusForm}
-                                handleBack={self.handleBack}
-                                handleCommentDisplay={self.handleCommentDisplay}
-                                commentDisplayInput={option.commentDisplayInput}/>
+                            <CardControls selected={option.selected}
+                                          handleButton={self.handleButton}
+                                          options={option.options}
+                                          commenttext={option.commenttext}
+                                          comment={option.comment}
+                                          onSubmit={self.processVersusForm}
+                                          handleBack={self.handleBack}
+                                          handleCommentDisplay={self.handleCommentDisplay}
+                                          commentDisplayInput={option.commentDisplayInput}/>
                         </form>
                     </div>
                 );

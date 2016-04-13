@@ -123,6 +123,11 @@
 // center
 .l-center-block {
     margin: 0 auto;
+    @media(max-width: $small-screen){
+        &.l-col-r {
+            width: 100%;
+        }
+    }
 }
 .l-center-absolute-el {
     left: 50%;

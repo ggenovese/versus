@@ -7,10 +7,17 @@
     overflow: hidden;
     position: relative;
     transition: width 0.30s ease-in-out;
+    box-shadow: inset 1px 0px 5px 0px $dark;
     @media (max-width: $small-screen) {
-        height: 250px;
+        height: 40vh;
     }
     &.l-col-1 {
         background-size: contain;
+        @media (max-width: $small-screen) {
+            height: 75vh;
+        }
+    }
+    &:first-child {
+        border-right: 1px solid $medium;
     }
 }
