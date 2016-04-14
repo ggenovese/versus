@@ -16,7 +16,7 @@ const Card = React.createClass({
         return (
             <div style={divStyle}
                  onClick={this.handleButton}
-                 className={"versus-card v-bg-white l-col-r "+ (selected === objectKey ? "l-col-1 l-h-9-10" : "l-col-1-2 l-h-4-5")+(notselected === objectKey ? " l-hidden" : "")}>
+                 className={"versus-card v-bg-white l-col-r "+ (selected === objectKey ? "l-col-1 l-h-9-10" : "l-col-1-2 l-h-4-5")+(notselected === objectKey ? " l-hide-me" : "")}>
             </div>
         );
   }

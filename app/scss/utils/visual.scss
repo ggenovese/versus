@@ -44,8 +44,13 @@
     transition: all 0.30s ease-in-out;
     width: 100%;
     &.v-error {
-        border-color: $red;
+        border-color: lighten($red, 30%);
+        box-shadow: 0 0 5px lighten($red, 30%);
     }
+}
+
+.v-error-text {
+    color: lighten($red, 30%);
 }
 
 .v-text-area.inactive {

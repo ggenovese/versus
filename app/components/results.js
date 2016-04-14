@@ -26,7 +26,14 @@ export default class Results extends React.Component {
         const self = this;
 
         if ( editVersus ) {
+            const oldOption = this.props.versus.choices[index];
+            const newOption = Object.assign({}, oldOption);
+            newOption.selected = '';
+            newOption.notselected = '';
+            this.props.dispatch(actions.versusChosen(newOption, index));
+
             this.props.dispatch(actions.resetEmailSent());
+
         }
         history.push('/versus/'+index);
     }

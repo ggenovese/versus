@@ -3,10 +3,11 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    opacity: 1;
     outline: none;
     overflow: hidden;
     position: relative;
-    transition: width 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
     box-shadow: inset 1px 0px 5px 0px $dark;
     @media (max-width: $small-screen) {
         height: 40vh;

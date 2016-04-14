@@ -93,7 +93,7 @@ export default class Versus extends React.Component {
         var versusSection = function() {
                 const option = versus.choices[versusIndex];
                 return (
-                    <div>
+                    <div className="v-bg-dark">
                         <form ref="versusForm" className="l-position-relative">
                             <div className="l-grid">
 
