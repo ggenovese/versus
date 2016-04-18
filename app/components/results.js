@@ -35,7 +35,7 @@ export default class Results extends React.Component {
             this.props.dispatch(actions.resetEmailSent());
 
         }
-        history.push('/versus/'+index);
+        this.props.history.push('/versus/'+index);
     }
 
     handleSendEmail(){

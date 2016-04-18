@@ -71,6 +71,11 @@ a {
     text-transform: uppercase;
 }
 
+.t-lato-light {
+    font-family: $font-body;
+    font-weight: $weight-light;
+}
+
 .t-paragraph-lead {
     font-size: $gamma;
     line-height: 1.5;

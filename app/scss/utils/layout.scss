@@ -113,7 +113,12 @@
         padding: $default-pad * 2;
     }
 }
-
+.l-padding-top-800 {
+    padding-top: $default-pad * 4;
+    @media (max-width: $small-screen) {
+        padding: $default-pad * 2;
+    }
+}
 
 // Position
 .l-position-relative {

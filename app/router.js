@@ -12,6 +12,7 @@ import MainLayout from './components/main-layout';
 import Home from './components/home';
 import Versus from './components/versus';
 import Results from './components/results';
+import Profile from './components/profile';
 
 import reducer from './reducers';
 
@@ -33,6 +34,8 @@ export default (
                     <Route path="versus/:indexRoute" component={Versus} />
 
                     <Route path="results" component={Results} />
+
+                    <Route path="profile" component={Profile} />
 
                 </Route>
             </Router>

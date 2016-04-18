@@ -1,0 +1,17 @@
+.profile {
+    .vs-logo {
+        top: $default-pad;
+    }
+    .v-button--util {
+        right: 0;
+        top: 0;
+        transform: translateY(31%);
+        svg {
+            fill: $white;
+            pointer-events: none;
+        }
+        span {
+            pointer-events: none;
+        }
+    }
+}

@@ -78,3 +78,18 @@ export function handleScroll(bool) {
         bool
     }
 }
+
+export function editProfileEdit(inputName) {
+    return {
+        type: 'EDIT_PROFILE_EDIT',
+        inputName
+    }
+}
+
+export function editProfileValue(inputName, value) {
+    return {
+        type: 'EDIT_PROFILE_VALUE',
+        inputName,
+        value
+    }
+}

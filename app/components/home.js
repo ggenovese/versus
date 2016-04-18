@@ -30,7 +30,7 @@ export default class Home extends React.Component {
 
     navigateToVersus(){
         const { history } = this.props;
-        history.push('/versus/0');
+        this.props.history.push('/versus/0');
     }
 
     render() {

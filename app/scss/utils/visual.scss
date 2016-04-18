@@ -92,6 +92,12 @@
     &.v-button-large {
         font-size: $epsilon;
     }
+    &.v-button--util {
+        border-radius: 50%;
+        height: 30px;
+        padding: 7px;
+        width: 30px;
+    }
 }
 
 // Overlay
