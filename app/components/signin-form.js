@@ -47,20 +47,21 @@ class SignInForm extends Component {
         const { fields: { name, email }, resetForm, handleSubmit, submitting } = this.props
         return (
             <form ref="signInForm" className="l-grid" onSubmit={handleSubmit(this.processSignInForm)}>
-
-                <label htmlFor="name" className="l-visually-hidden">Your Name</label>
-                <input className={"v-text-input l-d-block l-margin-bottom-100 "+
+                <div className={"l-position-relative v-input-group "+ (name.touched && name.error ? "v-form-error" : "")}>
+                    <input className={"v-text-input l-d-block l-margin-bottom-400 "+
                                  (name.touched && name.error ? "v-error" : "valid")}
-                       name="name" type="text" ref="name" placeholder="Your Name" {...name}/>
+                       name="name" type="text" ref="name" {...name} required/>
+                   <label htmlFor="name" className="v-label l-position-absolute">Your Name</label>
+                   {name.touched && name.error && <p className="v-error-text l-position-absolute">{name.error}</p>}
+                </div>
 
-                {name.touched && name.error && <p className="l-margin-bottom-100 t-right v-error-text">{name.error}</p>}
-
-                <label htmlFor="email" className="l-visually-hidden">Email</label>
-                <input className={"v-text-input l-d-block l-margin-bottom-100 "+
+                <div className={"l-position-relative v-input-group "+ (email.touched && email.error ? "v-form-error" : "")}>
+                    <input className={"v-text-input l-d-block l-margin-bottom-400 "+
                                  (email.touched && email.error ? "v-error" : "valid")}
-                       name="email" type="text" ref="email" placeholder="Email" {...email}/>
-
-                {email.touched && email.error && <p className="l-margin-bottom-100 t-right v-error-text">{email.error}</p>}
+                       name="email" type="text" ref="email" {...email} required/>
+                   <label htmlFor="email" className="v-label l-position-absolute">Email</label>
+                   {email.touched && email.error && <p className="v-error-text l-position-absolute">{email.error}</p>}
+                </div>
 
                 <button className="v-button v-button-large l-col-1" id="submit" type="submit">Sign In</button>
 

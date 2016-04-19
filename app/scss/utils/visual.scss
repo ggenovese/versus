@@ -49,8 +49,40 @@
     }
 }
 
+.v-input-group {
+    transition: all .3s;
+    .v-error-text {
+        bottom: -($default-pad + ($default-pad / 2));
+        right: 0;
+    }
+    &.v-form-error {
+        margin-bottom: $default-pad * 3;
+        label.v-label {
+            color: lighten($red, 30%);
+        }
+    }
+}
+.v-label {
+    color: $medium;
+    left: $default-pad;
+    font-family: $font-body;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s;
+}
+.v-text-input:focus ~ .v-label,
+.v-text-input.v-error ~ .v-label,
+.v-text-input:valid ~ .v-label {
+    color: $light;
+    font-size: $zeta;
+    left: 0;
+    top: -$default-pad;
+}
+
 .v-error-text {
     color: lighten($red, 30%);
+    font-size: $zeta;
 }
 
 .v-text-area.inactive {
