@@ -9,6 +9,7 @@ const initialState = {
     userEntered: false
   },
   fixEmailCta: false,
+  emailSent: false,
   choices: Data
 };
 

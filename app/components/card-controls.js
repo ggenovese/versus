@@ -69,6 +69,18 @@ export default class CardControls extends React.Component {
   }
 };
 
+CardControls.propTypes = {
+    selected: React.PropTypes.string.isRequired,
+    handleButton: React.PropTypes.func.isRequired,
+    options: React.PropTypes.object.isRequired,
+    commenttext: React.PropTypes.string,
+    comment: React.PropTypes.bool,
+    onSubmit: React.PropTypes.func.isRequired,
+    handleBack: React.PropTypes.func.isRequired,
+    handleCommentDisplay: React.PropTypes.func.isRequired,
+    commentDisplayInput: React.PropTypes.bool.isRequired
+};
+
 export default connect(
   mapStateToProps
 )(CardControls);

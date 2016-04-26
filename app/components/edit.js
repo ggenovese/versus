@@ -35,6 +35,12 @@ export default class Edit extends React.Component {
     }
 };
 
+Edit.propTypes = {
+    navigateToVersus: React.PropTypes.func.isRequired,
+    altImg: React.PropTypes.string.isRequired,
+    id: React.PropTypes.number.isRequired
+};
+
 export default connect(
   mapStateToProps
 )(Edit);

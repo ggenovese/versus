@@ -68,6 +68,15 @@ export default class SendEmail extends React.Component {
   }
 };
 
+SendEmail.propTypes = {
+    handleSendEmail: React.PropTypes.func.isRequired,
+    emailSent: React.PropTypes.bool,
+    name: React.PropTypes.string.isRequired,
+    email: React.PropTypes.string.isRequired,
+    handleScroll: React.PropTypes.func.isRequired,
+    fixEmailCta: React.PropTypes.bool
+};
+
 export default connect(
   mapStateToProps
 )(SendEmail);
